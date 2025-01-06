@@ -1,0 +1,141 @@
+/* 全体のレイアウト設定 */
+body {
+    font-family: "Arial", sans-serif; /* 日本語のフォントをゴシックに変更 */
+    margin: 0;
+    padding: 0;
+    display: flex; /* フレックスボックスレイアウト */
+    flex-direction: column; /* 縦並びに配置 */
+    min-height: 100vh; /* ブラウザの高さに合わせる */
+}
+
+
+h2 {
+    margin-top: 40px;
+}
+p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-indent: 2em; /* インデントを1文字分に設定 */
+}
+
+/* ヘッダー部分 */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* 画像とタイトルの間隔 */
+    padding: 20px;
+}
+
+/* プロフィール画像 */
+.profile-image {
+    width: 125px;
+    height: 150px;
+    border-radius: 50%; /* 画像を丸くする */
+}
+
+/* 画像の大きさと位置を調整 */
+.res11-image,.res12-image {
+    width: 70%; /* 画像の幅を設定 (必要に応じて変更) */
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */
+    display: block; /* ブロック要素にして中央揃えを可能にする */
+    margin: 20px 20px; /* 上下に20pxの余白を追加し、左右中央揃え */
+    /*margin: 20px auto; /* 上下に20pxの余白を追加し、左右中央揃え */
+    /*border-radius: 10px; /* 角を丸くする（任意） */
+    /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 影を追加（任意） */
+    border: 2px solid black; /* 黒い枠を追加 */
+    padding: 15px; /* 枠と画像の間に余白を追加 */
+}
+
+.res21-image {
+    width: 40%; /* 画像の幅を設定 (必要に応じて変更) */
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */
+    display: block; /* ブロック要素にして中央揃えを可能にする */
+    margin: 20px 20px; /* 上下に20pxの余白を追加し、左右中央揃え */
+    border: 2px solid black; /* 黒い枠を追加 */
+    padding: 15px; /* 枠と画像の間に余白を追加 */
+}
+.res22-image {
+    width: 30%; /* 画像の幅を設定 (必要に応じて変更) */
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */
+    display: block; /* ブロック要素にして中央揃えを可能にする */
+    margin: 20px 20px; /* 上下に20pxの余白を追加し、左右中央揃え */
+    border: 2px solid black; /* 黒い枠を追加 */
+    padding: 15px; /* 枠と画像の間に余白を追加 */
+}
+
+/* 言語切り替えボタン */
+.language-switch {
+    text-align: right;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.language-switch a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #35495e;
+    font-size: 1.5em; /* フォントサイズを大きく */
+}
+
+.update-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.update-history ul li {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+/* ナビゲーション */
+nav {
+    width: 10%; /* ブラウザ幅の10%を使用 */
+    background-color: #35495e;
+    color: white;
+    position: fixed; /* 固定配置 */
+    top: 0;
+    bottom: 0;
+    padding: 20px 10px;
+    z-index: 1; /* 他の要素より前面に表示 */
+}
+
+/* メインコンテンツ */
+main {
+    margin-left: 15%; /* navの幅に合わせて左余白を調整 */
+    width: 85%; /* 残りのスペースを使用 */
+    padding: 20px;
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    background-color: #f4f4f4;
+    width: 100%; /* ブラウザ幅に合わせる */
+    margin-top: auto; /* ページ内容の後に配置 */
+    box-sizing: border-box; /* パディングを幅に含める */
+    position: relative; /* 固定されない通常の配置 */
+}
+
+
+

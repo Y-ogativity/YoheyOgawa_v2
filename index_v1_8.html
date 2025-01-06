@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 
+cd ~/Downloads 
+python -m http.server
+
+ブラウザでアクセス:
+http://localhost:8000/index_v1_6.html
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 小川洋平 Yohey Ogawa</title>
+
+    <!-- 外部CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style_v2.css">
+
+</head>
+<body>
+
+    <div class="language-switch">
+        <a href="#" onclick="switchLanguage('ja')">日本語</a>
+        <a href="#" onclick="switchLanguage('en')">English</a>
+    </div>
+
+    <nav>
+        <ul>
+            <div lang="ja">
+                <li><a href="#overview">小川洋平</a></li>
+                <li><a href="#current">現在の研究</a></li>
+                <li><a href="research.html">これまでの研究成果</a></li>
+                <li><a href="#publications">業績</a></li>
+                <li><a href="#career">経歴・職歴</a></li>
+                <li><a href="#contact">連絡先</a></li>
+            </div>
+            <div lang="en">
+                <li><a href="#overview">Yohey Ogawa</a></li>
+                <li><a href="#current">Current Research</a></li>
+                <li><a href="research.html">Previous Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+        </ul>
+        <!-- 更新履歴のプレースホルダー -->
+        <div class="update-history">
+            <p>-----------------</p>
+            <p lang="ja">更新履歴</p>
+            <p lang="en" style="display: none;">Update History</p>
+            <ul id="update-list"></ul>
+        </div>
+    </nav>
+
+    <div class="mobile-header">
+        <a href="#">メニューを表示</a>
+    </div>
+
+    <main>
+
+        <section id="overview">
+            <header>
+                <!-- プロフィール画像とタイトルを横並びに配置 -->
+                <div class="header-content">
+                    <img src="./media_file/photo/Yohei_Ogawa_cherry.jpeg" alt="プロフィール画像" class="profile-image">
+                    <h1>小川洋平 Yohey Ogawa</h1>
+                </div>
+                <!--<p class="sub-title">生物科学研究者</p>-->
+            </header>
+    
+            <div lang="ja">
+
+                <h2 style="display: inline-block; margin-right: 20px;">研究目標</h2>
+                <p style="display: inline-block;font-size:x-large; margin-top: 2em; margin-bottom: 2em;"><strong style="border: 1px solid; padding: 5px;">遺伝子転写システムを種間比較し、細胞の進化的変遷や起源を解明する</strong></p>
+                <p>ヒトゲノムのうち遺伝子をコードする領域はたったの数％です。また遺伝子数は多くても３万遺伝子ほどしかありません。これらの部品（遺伝子）を使って、例えばヒトの脳においては、約９００億個の神経細胞が作られ、神経細胞は数百～数千種類のサブタイプを構成します。このように多様な細胞を形成するためには、それぞれの遺伝子が適切なタイミングかつ特定の場所にて使用（遺伝子発現）される必要があります。個々の遺伝子の発現は、ヒトやマウスにおいては約３千の転写関連因子が織りなす転写調節システムにより制御されます。また動物においては、体の構造が単純か複雑かに関わらず、遺伝子の数は大まかに数万程度で、桁が同じです。つまり転写ネットワークの複雑化により、それぞれの生物にユニークな形質が生み出されます。進化の過程では、それぞれの遺伝子が機能を失ったり獲得したりすると同時に、遺伝子の転写調節が変化していると分かってきました。それぞれの生物の進化過程で転写ネットワークがどのように変化するか、詳細の解明はまだ始まったばかりです。</p>
+                <p>私はなかでも特に、哺乳類ではない脊椎動物において、細胞のユニークな機能やアイデンティティを規定する転写システムの解析を志しています。さらに哺乳類との種間比較を行ない、転写システムの進化的変遷や起源の解明を目指しています。また将来的には、遺伝子工学を用いてヒトの細胞に新たな機能を付与することにより、医学に貢献します。</p>
+                <h2>中心仮説</h2>
+                <h3><strong style="padding: 5px;">転写システムは転写調節因子の結合パターンとして表現できる</strong></h3>
+                <p>真核生物の転写調節因子はゲノム中の特定の塩基配列を認識して結合します。その認識配列には柔軟性があり、認識配列パターンの総称は転写因子結合モチーフ（例えばホメオドメインモチーフ）と呼ばれます。複数の転写因子が転写因子モチーフを介してDNA近傍に集まることで、機能的な遺伝子調節領域（シス調節領域）を形成します。シス調節領域により個々の遺伝子の転写が促進または抑制され、結果として細胞のアイデンティティや細胞機能が備わります。このような転写因子の結合配列の機能的な組み合わせを、私はシス調節コードと呼んでいます。シス調節コードの保存性の種間比較を試みており、塩基配列の保存性によらない、長い時間スケール（数億年以上）に及ぶ細胞のアイデンティティや機能の種間比較を目指します。</p>
+            </div>
+
+            <div lang="en" style="display: none;">
+                <h2 style="display: inline-block; margin-right: 20px;">Research Goals</h2>
+                <p style="display: inline-block;font-size:large; margin-top: 2em; margin-bottom: 2em;"><strong style="border: 1px solid; padding: 5px;">Comparing gene transcription systems across species to elucidate the evolutionary transitions and origins of cells</strong></p>
+                <p>Only a few percent of the human genome encodes genes, and there are only about 30,000 genes at most. Using these components (genes), for example, in the human brain, about 90 billion neurons are created, and neurons form hundreds to thousands of subtypes. To form such diverse cells, each gene must be used (expressed) at the right time and in the right place. The expression of individual genes is controlled by a transcriptional regulatory system woven by about 3,000 transcription-related factors in humans and mice. In animals, regardless of whether their body structure is simple or complex, the number of genes is roughly tens of thousands, which is the same order of magnitude. In other words, unique traits of each organism are created by the complexity of the transcription network. It has been found that during evolution, the transcriptional regulation of genes changes as genes lose or gain functions. The detailed elucidation of how transcription networks change during the evolutionary process of each organism has just begun.</p>
+                <p>I am particularly interested in analyzing the transcription systems that define the unique functions and identities of cells in non-mammalian vertebrates. Furthermore, I aim to elucidate the evolutionary transitions and origins of transcription systems through interspecies comparisons with mammals. In the future, I aim to contribute to medicine by using genetic engineering to add new functions to human cells.</p>
+                <h2>Central Hypothesis</h2>
+                <h3><strong style="padding: 5px;">The transcription system can be represented as patterns of transcription factor binding</strong></h3>
+                <p>Eukaryotic transcription factors recognize and bind to specific nucleotide sequences in the genome. These recognition sequences have flexibility, and the general term for recognition sequence patterns is transcription factor binding motifs (e.g., homeodomain motifs). Multiple transcription factors gather near DNA through transcription factor motifs to form functional gene regulatory regions (cis-regulatory regions). Cis-regulatory regions promote or inhibit the transcription of individual genes, resulting in cell identity and function. I refer to these functional combinations of transcription factor binding sequences as cis-regulatory codes. I am attempting to compare the conservation of cis-regulatory codes across species, aiming for interspecies comparisons of cell identity and function over long time scales (hundreds of millions of years) that are not dependent on the conservation of nucleotide sequences.</p>
+            </div>
+        </section>
+
+        <section id="current">
+            <div lang="ja">
+               <h2>研究テーマ</h2>
+               <h3>進行中</h3>
+                <ul>
+                    <li><b>シングルセルATAC-seqデータを用いた細胞タイプ間の比較方法の開発</b></li>
+                    <p>私たちはこれまで、６種類の脊椎動物であるヤツメウナギ、ゼブラフィッシュ、キンギョ、ニワトリ、マウス、ヒトの網膜を用いてシングルセルATAC-seqプロファイルを取得し、網膜のオープンクロマチンデータの比較解析を行いました（<a href="research.html#atac">研究成果</a>）。データ解析方法を工夫して、６種類の細胞クラスにそれぞれ保存された転写因子モチーフの組み合わせを見出しました。</p>
+                    <p>細胞クラスはそれぞれ複数の細胞タイプより構成されます。そこでさらに細胞タイプそれぞれに共通した転写因子モチーフの組み合わせが存在するかどうかを調べるため、新たな細胞比較方法を開発しています。</p>
+                    <li><b>ウシガエルとグリーンアノール網膜の解析</b></li>
+                    <p>上記の６種類の脊椎生物とは別に、ウシガエル（Lithobates catesbeianus）とグリーンアノール（Anolis carolinensis）網膜のシングルセルATAC-seqデータを取得しています。両者においては、非常に興味深いユニークな視細胞のサブタイプ（グリーンロッドやダブルコーン）が存在します。これら細胞の進化的な由来は非常に興味深く、上記の解析手法を適応して細胞の種間比較を行い、視細胞の相同性に迫っています。</p>
+                </ul>
+                <h3>将来の研究アイデア</h3>
+                <ul>
+                    <li><b>遺伝子転写を誘導する転写因子モチーフの組み合わせ</b></li>
+                    <p>私たちのこれまでの研究により、それぞれの細胞クラスにおいては、転写因子モチーフの組み合わせが種を超えて広く保存されていることが分かりました（<a href="research.html#atac">研究成果</a>）。その一方で、１つの機能的なシス領域を構成する、転写モチーフの組み合わせは分かっていません。そこで、ゼブラフィッシュ、アフリカツメガエル、ニワトリ、ネズミ、ヒトのオルガノイドなど、遺伝子導入系が確立されている生物においてスループットの高いレポーターアッセイをそれぞれの生物において行います。これにより、遺伝子転写と連関し、かつ進化的に保存された転写因子モチーフの組み合わせを見出します。</p>
+                    <li><b>眼の相同性の探求</b></li>
+                    <p>幅広い分類群にわたる動物は、外界の光を活用するため、眼球を持ちます。これら器官は、「光を受容する」や「光刺激を脳へ投射する」といった機能が相同です。興味深いことに、マウスのPAX6は眼球発生をハエの脚に誘導でき、つまり哺乳類とハエの転写制御因子PAX6はともに分子的に相互交換可能です。進化の過程で１度だけ眼球をつくる仕組みが生まれたと想定されています。しかしながら、遠縁な動物では、眼球の発生や、神経の種類はそれぞれ全く異なり、発現する遺伝子の類似性も乏しい。そこで、これまでに私が開発した細胞クラス比較法を、脊椎動物から無脊椎動物へと拡大して適応する。具体的にはシングルセルATAC-seqを、ホヤやハエなどの進化的に重要な位置を占める無脊椎動物において行い、転写因子モチーフの組み合わせを比べて転写システムの比較解析を行い、眼球の起源に迫りたい。またさらには、脊椎動物の網膜細胞クラスそれぞれに備わる転写因子モチーフの組み合わせの進化起源も合わせて同定されると期待できる。</p>
+                </ul>
+            </div>
+            <div lang="en">
+                <h2>Research Themes</h2>
+                <h3>Ongoing</h3>
+                 <ul>
+                     <li><b>Development of methods for comparing cell types using single-cell ATAC-seq data</b></li>
+                     <p>We have obtained single-cell ATAC-seq profiles from the retinas of six vertebrates: lamprey, zebrafish, goldfish, chicken, mouse, and human, and performed comparative analysis of open chromatin data in the retina (<a href="research.html#atac">Research Results</a>). By refining data analysis methods, we identified combinations of transcription factor motifs conserved in each of the six cell classes.</p>
+                     <p>Each cell class consists of multiple cell types. To further investigate whether there are common combinations of transcription factor motifs for each cell type, we are developing new methods for cell comparison.</p>
+                     <li><b>Analysis of bullfrog and green anole retinas</b></li>
+                     <p>In addition to the six vertebrates mentioned above, we have obtained single-cell ATAC-seq data from the retinas of the bullfrog (Lithobates catesbeianus) and the green anole (Anolis carolinensis). Both species have unique photoreceptor subtypes (green rods and double cones) that are of great interest. We are applying the above analysis methods to perform interspecies comparisons of cells and investigate the homology of photoreceptors.</p>
+                 </ul>
+                 <h3>Future Research Ideas</h3>
+                 <ul>
+                     <li>Combinations of transcription factor motifs that induce gene transcription</li>
+                     <p>Our previous research has shown that combinations of transcription factor motifs are widely conserved across species in each cell class (<a href="research.html#atac">Research Results</a>). However, the combinations of transcription motifs that constitute a single functional cis-regulatory region are not yet known. Therefore, we will conduct high-throughput reporter assays in organisms with established gene introduction systems, such as zebrafish, African clawed frog, chicken, mouse, and human organoids. This will allow us to identify combinations of transcription factor motifs that are associated with gene transcription and evolutionarily conserved.</p>
+                     <li>Exploration of eye homology</li>
+                     <p>Animals across a wide range of taxa possess eyes to utilize external light. These organs have homologous functions such as "receiving light" and "projecting light stimuli to the brain." Interestingly, mouse PAX6 can induce eye development in the legs of flies, indicating that the transcriptional regulators PAX6 in mammals and flies are molecularly interchangeable. It is assumed that the mechanism for eye development emerged only once during evolution. However, in distantly related animals, eye development and types of neurons are completely different, and the similarity of expressed genes is low. Therefore, I will expand the cell class comparison method I developed to invertebrates from vertebrates. Specifically, I will perform single-cell ATAC-seq in evolutionarily important invertebrates such as tunicates and flies, compare combinations of transcription factor motifs, and conduct comparative analysis of transcription systems to investigate the origin of eyes. Additionally, I expect to identify the evolutionary origins of the combinations of transcription factor motifs present in each retinal cell class of vertebrates.</p>
+                 </ul>
+             </div>
+        </section>
+
+
+            <div lang="ja">
+               <h2>これまでの研究成果</h2>
+               <ul>
+                   <li><a href="research.html#atac">網膜神経細胞クラスそれぞれにおける転写因子モチーフの高い種間相同性</a></li>
+                    <li><a href="research.html#zebrafish">ゼブラフィッシュ視細胞サブタイプのネットワークの同定</a></li>
+                </ul>
+            </div>
+    
+        <section id="publications">
+            <div lang="ja">
+                <h2>業績（抜粋）</h2>
+                <ol>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, Y. Liu, C. A. Myers, A. Morshedian, G. L. Fain, A. P. Sampath, J. C. Corbo, 
+                        <a href="https://doi.org/10.1101/2024.11.13.623372"> Conservation of cis-regulatory codes over half a billion years of evolution. </a> 
+                        <b><i>bioRxiv</i></b> 2024.11.13.623372 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                        R. Arbore, S. Barbosa, J. Brejcha, <span style="color: blue;"><b>Y. Ogawa</b></span>, Y. Liu, M. P. J. Nicolaï, P. Pereira, S. J. Sabatino, A. Cloutier, E. S. K. Poon, C. I. Marques, P. Andrade, G. Debruyn, S. Afonso, R. Afonso, S. G. Roy, U. Abdu, R. J. Lopes, P. Mojzeš, P. Marík, S. Y. W. Sin, M. A. White, P. M. Araújo, J. C. Corbo, M. Carneiro, 
+                        <a href="https://doi.org/10.1126/science.adp7710"> A molecular mechanism for bright color variation in parrots.</a> 
+                        <i><b>Science</b></i> 386, eadp7710 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                    L. I. Volkov,<span style="color: blue;"><b>Y. Ogawa</b></span>, R. Somjee, H. E. Vedder, H. E. Powell, D. Poria, S. Meiselman, V. J. Kefalov, J. C. Corbo, 
+                    <a href="https://doi.org/10.1073/pnas.2402121121"> Samd7 represses short-wavelength cone genes to preserve long-wavelength cone and rod photoreceptor identity.</a>
+                    <i><b>Proc. Natl. Acad. Sci. U.S.A.</b></i> 121, e2402121121 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, Y. Fukada, and D. Kojima, 
+                    <a href="https://doi.org/10.1126/sciadv.abi9784">Foxq2 determines blue cone identity in zebrafish.</a>  
+                    <i><b>Science Advances</b></i> 7, 1–16 (2021).   
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span> and J. C. Corbo,  
+                        <a href="https://doi.org/10.1038/s41598-021-96837-z">Partitioning of gene expression among zebrafish photoreceptor subtypes.</a>  
+                        <i><b>Scientific Reports</b></i> 11, 17340 (2021). 
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, Y. Asano, A. Muto, K. Kawakami, Y. Suzuki, D. Kojima, and Y. Fukada, 
+                        <a href="https://doi.org/10.1073/pnas.1812884116">Six6 and Six7 coordinately regulate expression of middle-wavelength opsins in zebrafish.</a>  
+                        <i><b>Proc. Natl. Acad. Sci. U.S.A.</b></i> 116, 4651–4660 (2019). 
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, D. Kojima, and Y. Fukada, 
+                        <a href="https://doi.org/10.1098/rspb.2015.0659 ">Homeobox transcription factor Six7 governs expression of green opsin genes in zebrafish.</a>  
+                        <i><b> Proc. R. Soc. B: Biol. </b></i> 282, 20150659 (2015).
+                    </li>
+                </ol>
+            </div>
+            <div lang="en">
+                <h2>Publications</h2>
+                <ol>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, Y. Liu, C. A. Myers, A. Morshedian, G. L. Fain, A. P. Sampath, J. C. Corbo, 
+                        <a href="https://doi.org/10.1101/2024.11.13.623372"> Conservation of cis-regulatory codes over half a billion years of evolution. </a> 
+                        <b><i>bioRxiv</i></b> 2024.11.13.623372 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                        R. Arbore, S. Barbosa, J. Brejcha, <span style="color: blue;"><b>Y. Ogawa</b></span>, Y. Liu, M. P. J. Nicolaï, P. Pereira, S. J. Sabatino, A. Cloutier, E. S. K. Poon, C. I. Marques, P. Andrade, G. Debruyn, S. Afonso, R. Afonso, S. G. Roy, U. Abdu, R. J. Lopes, P. Mojzeš, P. Marík, S. Y. W. Sin, M. A. White, P. M. Araújo, J. C. Corbo, M. Carneiro, 
+                        <a href="https://doi.org/10.1126/science.adp7710"> A molecular mechanism for bright color variation in parrots.</a> 
+                        <i><b>Science</b></i> 386, eadp7710 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                    L. I. Volkov,<span style="color: blue;"><b>Y. Ogawa</b></span>, R. Somjee, H. E. Vedder, H. E. Powell, D. Poria, S. Meiselman, V. J. Kefalov, J. C. Corbo, 
+                    <a href="https://doi.org/10.1073/pnas.2402121121"> Samd7 represses short-wavelength cone genes to preserve long-wavelength cone and rod photoreceptor identity.</a>
+                    <i><b>Proc. Natl. Acad. Sci. U.S.A.</b></i> 121, e2402121121 (2024).
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, Y. Fukada, and D. Kojima, 
+                    <a href="https://doi.org/10.1126/sciadv.abi9784">Foxq2 determines blue cone identity in zebrafish.</a>  
+                    <i><b>Science Advances</b></i> 7, 1–16 (2021).   
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span> and J. C. Corbo,  
+                        <a href="https://doi.org/10.1038/s41598-021-96837-z">Partitioning of gene expression among zebrafish photoreceptor subtypes.</a>  
+                        <i><b>Scientific Reports</b></i> 11, 17340 (2021). 
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, Y. Asano, A. Muto, K. Kawakami, Y. Suzuki, D. Kojima, and Y. Fukada, 
+                        <a href="https://doi.org/10.1073/pnas.1812884116">Six6 and Six7 coordinately regulate expression of middle-wavelength opsins in zebrafish.</a>  
+                        <i><b>Proc. Natl. Acad. Sci. U.S.A.</b></i> 116, 4651–4660 (2019). 
+                    </li>
+                    <li style="margin-top: 10px;">
+                        <span style="color: blue;"><b>Y. Ogawa</b></span>, T. Shiraki, D. Kojima, and Y. Fukada, 
+                        <a href="https://doi.org/10.1098/rspb.2015.0659 ">Homeobox transcription factor Six7 governs expression of green opsin genes in zebrafish.</a>  
+                        <i><b> Proc. R. Soc. B: Biol. </b></i> 282, 20150659 (2015).
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="career">
+            <div lang="ja">
+                <h2>経歴・職歴</h2>
+                <ul>
+                    <li>
+                        2023年9月 - 現在 Washington University School of Medicine, Pathology and Immunology, Staff Scientist 
+                    </li>
+                    <li>
+                        2018年9月 - 2023年8月 Washington University School of Medicine, Pathology and Immunology, Postdoctoral Research Associate 
+                    </li>
+                    <li>
+                        2020年4月 - 2022年9月 独立行政法人日本学術振興会, 海外特別研究員 
+                    </li>
+                    <li>
+                        2018年4月 - 2018年8月 東京大学, 大学院理学系研究科, 特任研究員
+                    </li>
+                    <li>
+                        2016年4月 - 2018年3月 独立行政法人日本学術振興会, 特別研究員
+                    </li>
+                    <li>2014年4月 - 2017年3月東京大学, 大学院理学系研究科大学院博士課程, 生物科学専攻 </li>
+                    <li>
+                        2012年4月 - 2014年3月東京大学, 大学院理学系研究科, 生物化学専攻
+                    </li>
+                    <li> 
+                        2010年4月 - 2012年3月東京大学, 理学部, 生物化学科
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div lang="ja">
+                <h2>連絡先</h2>
+                <p>お問い合わせは以下の方法でお願いします：</p>
+                <ul>
+                    <li>X: <a href="https://x.com/YoheyOgawa" target="_blank">@YoheyOgawa</a></li>
+                    <li>BlueSky: <a href="https://bsky.app/profile/yohey-ogawa.bsky.social" target="_blank">bsky.app/profile/yohey-ogawa.bsky.social</a></li>
+                    <li>Email: <span class="email">yoheiogawa(アットマーク)wustl.edu</span></li>
+                </ul>
+            </div>
+            <div lang="en" style="display: none;">
+                <h2>Contact</h2>
+                <p>You can reach me through the following methods:</p>
+                <ul>
+                    <li>X: <a href="https://x.com/YoheyOgawa" target="_blank">@YoheyOgawa</a></li>
+                    <li>BlueSky: <a href="https://bsky.app/profile/yohey-ogawa.bsky.social" target="_blank">bsky.app/profile/yohey-ogawa.bsky.social</a></li>
+                    <li>Email: <span class="email">yoheiogawa(アットマーク)wustl.edu</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="external-links">
+            <div lang="ja" style="display: none;">
+                <h2>外部リンク</h2>
+                <ul>
+                    <li>Researchmap: <a href="https://researchmap.jp/ogativity" target="_blank"> researchmap.jp/ogativity</a></li>
+                    <li>Researchgate: <a href="https://www.researchgate.net/profile/Yohey-Ogawa-2" target="_blank">researchgate.net/profile/Yohey-Ogawa-2</a></li>
+                    <li>Google Scholar: <a href="https://scholar.google.com/citations?user=TaOYI3QAAAAJ&hl=ja&oi=sra" target="_blank">scholar.google.com/citations?user=Yohey-Ogawa</a></li>
+                    <li>ORCID: <a href="https://orcid.org/0000-0001-9031-4393" target="_blank">orcid.org/0000-0001-9031-4393</a></li>
+                </ul>
+            </div>
+            <div lang="en" style="display: none;">
+                <h2>External Links</h2>
+                <ul>
+                    <li>Researchmap: <a href="https://researchmap.jp/ogativity" target="_blank"> researchmap.jp/ogativity</a></li>
+                    <li>Researchgate: <a href="https://www.researchgate.net/profile/Yohey-Ogawa-2" target="_blank">researchgate.net/profile/Yohey-Ogawa-2</a></li>
+                    <li>Google Scholar: <a href="https://scholar.google.com/citations?user=TaOYI3QAAAAJ&hl=ja&oi=sra" target="_blank">scholar.google.com/citations?user=Yohey-Ogawa</a></li>
+                    <li>ORCID: <a href="https://orcid.org/0000-0001-9031-4393" target="_blank">orcid.org/0000-0001-9031-4393</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 小川洋平 Yohey Ogawa All Rights Reserved.</p>
+    </footer>
+
+    <!-- java scriptの読み込み -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
