@@ -45,10 +45,20 @@ function switchLanguage(lang) {
 }
 
 // toggle navigation
+// ナビゲーションメニューの表示/非表示を切り替える関数
 function toggleNav() {
+    // ナビゲーション要素を取得
     const nav = document.querySelector('nav');
+    
+    // ナビゲーションメニューに "active" クラスをトグル
+    // "active" クラスがあれば削除し、なければ追加する
     nav.classList.toggle('active');
 }
+
+// ナビゲーション全体にクリックイベントリスナーを追加
+// ナビゲーションをクリックした際に toggleNav 関数を実行
+document.querySelector('nav').addEventListener('click', toggleNav);
+
 
 // ページ初期読み込み時にデフォルトの言語を設定
 document.addEventListener('DOMContentLoaded', () => {

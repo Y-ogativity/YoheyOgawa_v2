@@ -12,6 +12,91 @@ body {
     min-height: 100vh; /* ブラウザの高さに合わせる */
 }
 
+/* デフォルトではmobile headerを非表示 */
+.mobile-header {
+    display: none; /* デフォルトでは非表示 */
+    position: fixed;
+    bottom: 50px; /* language-switch の高さを考慮 */
+    right: 10px; /* 右側に少し余白を追加 */
+    z-index: 1000;
+    padding: 10px 20px; /* 横方向の余白を広げて見やすく */
+    width: auto; /* 必要な幅だけ確保 */
+    text-align: center; /* 中央揃えに変更 */
+    font-size: smaller; /* 小さい文字サイズ */
+    background-color: white; /* 背景を白に設定 */
+    color: black; /* 文字色を黒に設定 */
+    border: 2px solid black; /* 黒で周辺を囲む */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* 少しぼかした影を追加 */
+    border-radius: 15px; /* 角を丸くする */
+}
+
+/* スマホ用スタイル（768px以下の画面幅の場合に表示） */
+@media (max-width: 768px) {
+    .mobile-header {
+        display: block; /* スマホサイズで表示 */
+    }
+}
+
+/* Add styles for mobile navigation */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+    nav {
+        background-color: #35495e;
+        color: white;
+        position: fixed; /* 固定配置 */
+        top: 0;
+        bottom: 0;
+        padding: 20px 10px;
+        z-index: 1; /* 他の要素より前面に表示 */;
+        display: none;
+        flex: 1;
+        overflow-y: auto;
+        width: 50%; /* モバイルでは幅を50%に設定 */
+    }
+    nav.active {
+        display: block;
+    }
+    main {
+        flex: 1;
+        overflow-y: auto;
+        margin-left: 5%; /* navの幅に合わせて左余白を調整 */
+        margin-right: 5%; 
+        width: 90%;
+        /*width: 50%;  残りのスペースを使用 */
+    }
+}
+
+/* スマホ以外のデバイス用スタイル */
+@media (min-width: 769px) {
+
+    /* ナビゲーション */
+    nav {
+        width: 10%; /* ブラウザ幅の10%を使用 */
+        background-color: #35495e;
+        color: white;
+        position: fixed; /* 固定配置 */
+        top: 0;
+        bottom: 0;
+        padding: 20px 10px;
+        z-index: 1; /* 他の要素より前面に表示 */
+    }
+
+    /* メインコンテンツ */
+    main {
+        margin-left: 15%; /* navの幅に合わせて左余白を調整 */
+        width: 85%; /* 残りのスペースを使用 */
+        padding: 20px;
+        box-sizing: border-box; /* パディングを幅に含める */
+    }
+
+}
+
+
 
 h2 {
     margin-top: 40px;
@@ -91,26 +176,6 @@ p {
     font-size: 0.9em;
     color: #cccccc;
     margin-bottom: 8px;
-}
-
-/* ナビゲーション */
-nav {
-    width: 10%; /* ブラウザ幅の10%を使用 */
-    background-color: #35495e;
-    color: white;
-    position: fixed; /* 固定配置 */
-    top: 0;
-    bottom: 0;
-    padding: 20px 10px;
-    z-index: 1; /* 他の要素より前面に表示 */
-}
-
-/* メインコンテンツ */
-main {
-    margin-left: 15%; /* navの幅に合わせて左余白を調整 */
-    width: 85%; /* 残りのスペースを使用 */
-    padding: 20px;
-    box-sizing: border-box; /* パディングを幅に含める */
 }
 
 
