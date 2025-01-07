@@ -1,4 +1,8 @@
 /* 全体のレイアウト設定 */
+html {
+    font-size: 125%; /* 基本サイズの125% */
+}
+
 body {
     font-family: "Arial", sans-serif; /* 日本語のフォントをゴシックに変更 */
     margin: 0;

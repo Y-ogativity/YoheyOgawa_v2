@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- 
-cd ~/Downloads 
-python -m http.server
-
-ブラウザでアクセス:
-http://localhost:8000/index_v1_6.html
--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +8,27 @@ http://localhost:8000/index_v1_6.html
     <!-- 外部CSSファイルの読み込み -->
     <link rel="stylesheet" href="style_v2.css">
 
+    <style>
+        /* Add styles for mobile navigation */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            nav.active {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="language-switch">
         <a href="#" onclick="switchLanguage('ja')">日本語</a>
         <a href="#" onclick="switchLanguage('en')">English</a>
+    </div>
+
+    <div class="mobile-header">
+        <a href="#" onclick="toggleNav()">メニューを表示</a>
     </div>
 
     <nav>
@@ -50,10 +58,6 @@ http://localhost:8000/index_v1_6.html
             <ul id="update-list"></ul>
         </div>
     </nav>
-
-    <div class="mobile-header">
-        <a href="#">メニューを表示</a>
-    </div>
 
     <main>
 

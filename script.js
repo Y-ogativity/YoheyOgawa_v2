@@ -44,6 +44,12 @@ function switchLanguage(lang) {
     });
 }
 
+// toggle navigation
+function toggleNav() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+
 // ページ初期読み込み時にデフォルトの言語を設定
 document.addEventListener('DOMContentLoaded', () => {
     switchLanguage('ja'); // 日本語をデフォルトに設定
@@ -55,6 +61,3 @@ document.addEventListener('DOMContentLoaded', () => {
     //console.log(updateList); // これで確認
     loadUpdates(); // ページ読み込み時に更新履歴を読み込む
 });
-
-
-
