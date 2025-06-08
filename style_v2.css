@@ -84,6 +84,7 @@ body {
         bottom: 0;
         padding: 20px 10px;
         z-index: 1; /* 他の要素より前面に表示 */
+        overflow-y: auto;
     }
 
     /* メインコンテンツ */
