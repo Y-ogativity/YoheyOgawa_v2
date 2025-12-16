@@ -158,6 +158,12 @@ p {
     text-align: right;
     padding: 10px;
     background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 2000; /* ナビより前面に出す */
+    display: flex;
+    justify-content: flex-end;
 }
 
 .language-switch a {
@@ -206,6 +212,5 @@ footer {
     box-sizing: border-box; /* パディングを幅に含める */
     position: relative; /* 固定されない通常の配置 */
 }
-
 
 
