@@ -3,8 +3,10 @@ let currentLanguage = 'ja';
 
 // JSONファイルを読み込む関数
 async function loadUpdates() {
+    // 更新リストのないページでは何もしない
+    if (!document.getElementById('update-list')) return;
     try {
-        const response = await fetch('updates.json');
+        const response = await fetch('updates_Mishima.json');
         const data = await response.json();
         renderUpdates(data.updates);
     } catch (error) {
@@ -16,6 +18,7 @@ async function loadUpdates() {
 // 更新履歴をレンダリングする関数
 function renderUpdates(updates) {
     const updateList = document.getElementById('update-list');
+    if (!updateList) return;
     //console.log(updateList); // nullなら要素が取得できていない
     updateList.innerHTML = ''; // 一旦リストをクリア
     updates.forEach(update => {
@@ -32,6 +35,12 @@ function switchLanguage(lang) {
     document.documentElement.lang = lang;
     // for update history
     currentLanguage = lang;
+    // persist selection so other pages open in the same language
+    try {
+        localStorage.setItem('preferredLanguage', lang);
+    } catch (error) {
+        console.warn('Unable to persist language preference:', error);
+    }
     loadUpdates();
 
     const sections = document.querySelectorAll('[lang]');
@@ -62,12 +71,16 @@ document.querySelector('nav').addEventListener('click', toggleNav);
 
 // ページ初期読み込み時にデフォルトの言語を設定
 document.addEventListener('DOMContentLoaded', () => {
-    switchLanguage('ja'); // 日本語をデフォルトに設定
-});
-
-// スクリプトがHTML要素より先に実行されないようにするために使用します。
-document.addEventListener('DOMContentLoaded', () => {
-    //const updateList = document.getElementById('update-list');
-    //console.log(updateList); // これで確認
-    loadUpdates(); // ページ読み込み時に更新履歴を読み込む
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    let storedLang = null;
+    try {
+        storedLang = localStorage.getItem('preferredLanguage');
+    } catch (error) {
+        console.warn('Unable to read stored language preference:', error);
+    }
+    const initialLang = (urlLang === 'en' || urlLang === 'ja')
+        ? urlLang
+        : (storedLang === 'en' ? 'en' : 'ja');
+    switchLanguage(initialLang); // URL指定 > 保存値 > 日本語デフォルト
 });
