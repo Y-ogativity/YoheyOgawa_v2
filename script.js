@@ -6,7 +6,7 @@ async function loadUpdates() {
     // 更新リストのないページでは何もしない
     if (!document.getElementById('update-list')) return;
     try {
-        const response = await fetch('updates_Mishima.json');
+        const response = await fetch('update_Mishima.json');
         const data = await response.json();
         renderUpdates(data.updates);
     } catch (error) {

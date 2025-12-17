@@ -52,7 +52,7 @@ body {
         top: 0;
         bottom: 0;
         padding: 20px 10px;
-        z-index: 1; /* 他の要素より前面に表示 */;
+        z-index: 2500; /* 言語バーの上に表示 */
         display: none;
         flex: 1;
         overflow-y: auto;
@@ -83,7 +83,7 @@ body {
         top: 0;
         bottom: 0;
         padding: 20px 10px;
-        z-index: 1; /* 他の要素より前面に表示 */
+        z-index: 2500; /* 言語バーの上に表示 */
         overflow-y: auto;
     }
 
@@ -118,9 +118,9 @@ p {
 
 /* プロフィール画像 */
 .profile-image {
-    width: 125px;
-    height: 150px;
-    border-radius: 50%; /* 画像を丸くする */
+    width: 160px;
+    height: 160px;
+    border-radius: 40%; /* 画像を丸くする */
 }
 
 /* 画像の大きさと位置を調整 */
@@ -164,6 +164,9 @@ p {
     z-index: 2000; /* ナビより前面に出す */
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    min-height: 44px; /* 日本語/English の高さを揃える */
+    gap: 8px;
 }
 
 .language-switch a {
@@ -171,6 +174,12 @@ p {
     text-decoration: none;
     color: #35495e;
     font-size: 1.5em; /* フォントサイズを大きく */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 10px;
+    line-height: 1;
 }
 
 .update-history ul {
@@ -212,5 +221,3 @@ footer {
     box-sizing: border-box; /* パディングを幅に含める */
     position: relative; /* 固定されない通常の配置 */
 }
-
-
